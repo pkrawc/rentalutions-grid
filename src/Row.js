@@ -20,9 +20,9 @@ Row.propTypes = {
   columns: PropTypes.number
 }
 
-export default function Row({columns, children, className, ...rest}) {
+export default function Row({children, className, columns, style, ...rest}) {
   return (
-    <RowWrapper className={className}>
+    <RowWrapper className={className} style={style}>
       {
         columns ? Children.map(children, (child, i) => (
           cloneElement(child, {columns})
