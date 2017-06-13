@@ -28,7 +28,7 @@ const Column = styled.div.attrs({
         sm ? getPercent(sm, columns) : '100%'
     };
   }
-  @media (min-width: 720px) {
+  @media (min-width: 960px) {
     flex-basis: ${
       ({sm, md, lg, columns}) =>
         lg ? getPercent(lg, columns) :
@@ -37,6 +37,22 @@ const Column = styled.div.attrs({
     };
     max-width: ${
       ({sm, md, lg, columns}) =>
+        lg ? getPercent(lg, columns) :
+        md ? getPercent(md, columns) :
+        sm ? getPercent(sm, columns) : '100%'
+    };
+  }
+  @media (min-width: 1400px) {
+    flex-basis: ${
+      ({sm, md, lg, xLg, columns}) =>
+        xLg ? getPercent(xLg, columns) :
+        lg ? getPercent(lg, columns) :
+        md ? getPercent(md, columns) :
+        sm ? getPercent(sm, columns) : '100'
+    };
+    max-width: ${
+      ({sm, md, lg, xLg, columns}) =>
+        xLg ? getPercent(xLg, columns) :
         lg ? getPercent(lg, columns) :
         md ? getPercent(md, columns) :
         sm ? getPercent(sm, columns) : '100%'
