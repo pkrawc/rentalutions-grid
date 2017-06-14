@@ -13,7 +13,7 @@
   "author": "Patrick Krawczykowski",
   "license": "ISC",
   "peerDependencies": {
-    "react": "^15.5.4",
+    "react": "^15.5.4"
   },
   "dependencies": {
     "prop-types": "^15.5.10",
