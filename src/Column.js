@@ -11,51 +11,69 @@ const Column = styled.div.attrs({
   flex-direction: column;
   flex-grow: 1;
   flex-shrink: 0;
-  flex-basis: ${ ({sm, columns}) => sm ? getPercent(sm, columns) : '100%' };
-  max-width: ${ ({sm, columns}) => sm ? getPercent(sm, columns) : '100%' };
+  flex-basis: ${ ({sm, columns}) => xs ? getPercent(sm, columns) : '100%' };
+  max-width: ${ ({sm, columns}) => xs ? getPercent(sm, columns) : '100%' };
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   margin-left: ${ ({offset, columns}) => offset ? getPercent(offset, columns) : '0' };
-  @media (min-width: 540px) {
+  @media (min-width: 480px) {
     flex-basis: ${
-      ({sm, md, columns}) =>
-        md ? getPercent(md, columns) :
-        sm ? getPercent(sm, columns) : '100%'
+      ({xs, sm, md, columns}) =>
+        sm ? getPercent(sm, columns) :
+        xs ? getPercent(xs, columns) : '100%'
     };
     max-width: ${
-      ({sm, md, columns}) =>
-        md ? getPercent(md, columns) :
-        sm ? getPercent(sm, columns) : '100%'
+      ({xs, sm, md, columns}) =>
+        sm ? getPercent(sm, columns) :
+        xs ? getPercent(xs, columns) : '100%'
     };
   }
-  @media (min-width: 960px) {
+  @media (min-width: 992px) {
     flex-basis: ${
-      ({sm, md, lg, columns}) =>
-        lg ? getPercent(lg, columns) :
+      ({xs, sm, md, columns}) =>
         md ? getPercent(md, columns) :
-        sm ? getPercent(sm, columns) : '100'
+        sm ? getPercent(sm, columns) :
+        xs ? getPercent(xs, columns) : '100%'
     };
     max-width: ${
-      ({sm, md, lg, columns}) =>
-        lg ? getPercent(lg, columns) :
+      ({xs, sm, md, columns}) =>
         md ? getPercent(md, columns) :
-        sm ? getPercent(sm, columns) : '100%'
+        sm ? getPercent(sm, columns) :
+        xs ? getPercent(xs, columns) : '100%'
     };
   }
-  @media (min-width: 1400px) {
+  @media (min-width: 1200px) {
     flex-basis: ${
-      ({sm, md, lg, xLg, columns}) =>
-        xLg ? getPercent(xLg, columns) :
+      ({xs, sm, md, lg, columns}) =>
         lg ? getPercent(lg, columns) :
         md ? getPercent(md, columns) :
-        sm ? getPercent(sm, columns) : '100'
+        sm ? getPercent(sm, columns) :
+        xs ? getPercent(xs, columns) : '100'
     };
     max-width: ${
-      ({sm, md, lg, xLg, columns}) =>
-        xLg ? getPercent(xLg, columns) :
+      ({xs, sm, md, lg, columns}) =>
         lg ? getPercent(lg, columns) :
         md ? getPercent(md, columns) :
-        sm ? getPercent(sm, columns) : '100%'
+        sm ? getPercent(sm, columns) :
+        xs ? getPercent(xs, columns) : '100%'
+    };
+  }
+  @media (min-width: 1600px) {
+    flex-basis: ${
+      ({xs, sm, md, lg, xl, columns}) =>
+        xl ? getPercent(xLg, columns) :
+        lg ? getPercent(lg, columns) :
+        md ? getPercent(md, columns) :
+        sm ? getPercent(sm, columns) :
+        xs ? getPercent(xs, columns) : '100'
+    };
+    max-width: ${
+      ({xs, sm, md, lg, xl, columns}) =>
+        xl ? getPercent(xLg, columns) :
+        lg ? getPercent(lg, columns) :
+        md ? getPercent(md, columns) :
+        sm ? getPercent(sm, columns) :
+        xs ? getPercent(xs, columns) : '100%'
     };
   }
 `

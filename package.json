@@ -12,9 +12,11 @@
   },
   "author": "Patrick Krawczykowski",
   "license": "ISC",
+  "peerDependencies": {
+    "react": "^15.5.4",
+  },
   "dependencies": {
     "prop-types": "^15.5.10",
-    "react": "^15.5.4",
     "styled-components": "^2.0.0"
   },
   "devDependencies": {
