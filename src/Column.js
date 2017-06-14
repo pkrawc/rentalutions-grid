@@ -11,19 +11,19 @@ const Column = styled.div.attrs({
   flex-direction: column;
   flex-grow: 1;
   flex-shrink: 0;
-  flex-basis: ${ ({sm, columns}) => xs ? getPercent(sm, columns) : '100%' };
-  max-width: ${ ({sm, columns}) => xs ? getPercent(sm, columns) : '100%' };
+  flex-basis: ${ ({xs, columns}) => xs ? getPercent(xs, columns) : '100%' };
+  max-width: ${ ({xs, columns}) => xs ? getPercent(xs, columns) : '100%' };
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   margin-left: ${ ({offset, columns}) => offset ? getPercent(offset, columns) : '0' };
   @media (min-width: 480px) {
     flex-basis: ${
-      ({xs, sm, md, columns}) =>
+      ({xs, sm, columns}) =>
         sm ? getPercent(sm, columns) :
         xs ? getPercent(xs, columns) : '100%'
     };
     max-width: ${
-      ({xs, sm, md, columns}) =>
+      ({xs, sm, columns}) =>
         sm ? getPercent(sm, columns) :
         xs ? getPercent(xs, columns) : '100%'
     };
