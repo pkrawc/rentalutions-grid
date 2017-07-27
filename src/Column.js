@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { sizes } from './variables'
 
 const getPercent = (span = 1, totalColumns = 12) => `${(100 / totalColumns) * span}%`
 
 const Column = styled.div.attrs({
-  className: 'rnt-column'
+  className: 'row-column'
 })`
   display: flex;
   flex-direction: column;
@@ -16,7 +17,7 @@ const Column = styled.div.attrs({
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   margin-left: ${ ({offset, columns}) => offset ? getPercent(offset, columns) : '0' };
-  @media (min-width: 480px) {
+  @media (min-width: ${sizes.small}) {
     flex-basis: ${
       ({xs, sm, columns}) =>
         sm ? getPercent(sm, columns) :
@@ -28,7 +29,7 @@ const Column = styled.div.attrs({
         xs ? getPercent(xs, columns) : '100%'
     };
   }
-  @media (min-width: 992px) {
+  @media (min-width: ${sizes.medium}) {
     flex-basis: ${
       ({xs, sm, md, columns}) =>
         md ? getPercent(md, columns) :
@@ -42,7 +43,7 @@ const Column = styled.div.attrs({
         xs ? getPercent(xs, columns) : '100%'
     };
   }
-  @media (min-width: 1200px) {
+  @media (min-width: ${sizes.large}) {
     flex-basis: ${
       ({xs, sm, md, lg, columns}) =>
         lg ? getPercent(lg, columns) :
@@ -58,7 +59,7 @@ const Column = styled.div.attrs({
         xs ? getPercent(xs, columns) : '100%'
     };
   }
-  @media (min-width: 1600px) {
+  @media (min-width: ${sizes.xLarge}) {
     flex-basis: ${
       ({xs, sm, md, lg, xl, columns}) =>
         xl ? getPercent(xLg, columns) :

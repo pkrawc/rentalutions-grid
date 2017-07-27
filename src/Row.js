@@ -11,7 +11,7 @@ const RowWrapper = styled.div`
   margin-left: -0.5rem;
   margin-bottom: ${({verticalSpacing}) => verticalSpacing ? '1rem' : '0'};
   box-sizing: border-box;
-  .rnt-column {
+  .row-column {
     box-sizing: border-box;
   }
 `
@@ -20,9 +20,16 @@ Row.propTypes = {
   columns: PropTypes.number
 }
 
-export default function Row({children, className, columns, style, verticalSpacing, ...rest}) {
+export default function Row ({
+children, 
+className, 
+columns, 
+style,
+verticalSpacing,
+...rest
+}) {
   return (
-    <RowWrapper className={className} style={style} verticalSpacing={verticalSpacing}>
+    <RowWrapper className={className} style={style} verticalSpacing={verticalSpacing} {...rest}>
       {
         columns ? Children.map(children, (child, i) => (
           cloneElement(child, {columns})
